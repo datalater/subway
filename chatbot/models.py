@@ -9,14 +9,13 @@ class Subway(models.Model):
         return self.station_name
         
 class Schedule(models.Model):
-    date=models.DateField()
     time=models.DateTimeField()
     subway=models.ForeignKey(Subway)
     weather=models.CharField(max_length=20)
     interval=models.IntegerField()
     
     def __str__(self):
-        return self.date+self.time
+        return str(self.time)
 
 class User(models.Model):
     user_key=models.CharField(max_length=250)
@@ -28,8 +27,7 @@ class User(models.Model):
 class Data(models.Model):
     schedule=models.ForeignKey(Schedule)
     user=models.ForeignKey(User)
-    date=models.DateField(auto_now_add=True)
-    time=models.DateTimeField(auto_now_add=True)
+    time=models.DateTimeField()
     
     SIT_IN_DATA_CHOICES = (
         (1, '입석'),
@@ -44,6 +42,6 @@ class Data(models.Model):
     detail=models.IntegerField(choices=DETAIL_IN_DATA_CHOICES)
     
     def __str__(self):
-        return self.date+self.time
+        return str(self.time)+' '+str(self.schedule.subway.station_name)
 
     
