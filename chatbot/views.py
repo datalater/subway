@@ -4,13 +4,13 @@ import json
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import Subway,User,Schedule,Data
+from .models import Line,Station,Recent,User,Schedule,Data
 
 @csrf_exempt
 def keyboard(request):
     response_json={}
     response_json["type"]="buttons"
-    response_json["buttons"]=["최근 역1","최근 역2","최근 역3","최근 역4","여기에 없음"]
+    response_json["buttons"]=["시작하기"]
     return HttpResponse(json.dumps(response_json,ensure_ascii=False), content_type=u"application/json; charset=utf-8")
 
 @csrf_exempt
