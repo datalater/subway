@@ -1,5 +1,3 @@
-# push test by jmc
-
 import json
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -28,8 +26,7 @@ def message(request):
         "keyboard":{
             "type": "buttons",
             "buttons":[
-                "최근 역1",
-                "최근 역2-1",
+                "최근 역1-1",
                 "최근 역2",
                 "최근 역3",
                 "최근 역4",
