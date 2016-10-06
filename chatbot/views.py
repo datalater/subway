@@ -29,7 +29,7 @@ def message(request):
             "type": "buttons",
             "buttons":[
                 "최근 역1",
-                "최근 역2",
+                "최근 역2-1",
                 "최근 역3",
                 "최근 역4",
                 "여기에 없음"
