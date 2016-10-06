@@ -16,7 +16,6 @@ def keyboard(request):
 @csrf_exempt
 def message(request):
     value=json.loads(request.body.decode("utf-8"))
-    
     key=value['user_key']
     text=value['type']
     content=value["content"]
