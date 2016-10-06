@@ -26,7 +26,7 @@ class Station(models.Model):
     def __str__(self):
         return self.line.name+' '+self.name
         
-class Schedule(models.Model
+class Schedule(models.Model):
     # 열차 시간표 모델
     # -외래 키
     # station: 어느 열차의 시간표인지 구분
