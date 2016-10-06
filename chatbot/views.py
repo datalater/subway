@@ -30,12 +30,14 @@ def message(request):
         "keyboard":{
             "type": "buttons",
             "buttons":[
+                
                 "최근 역1-1",
                 "최근 역2-1",
                 "최근 역2-1",
                 "최근 역3-1",
                 "최근 역4-1",
                 "여기에 없음-1"
+
                 ]
         }
     }
