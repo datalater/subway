@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 class Subway(models.Model):
@@ -18,8 +19,10 @@ class Schedule(models.Model):
         return str(self.time)
 
 class User(models.Model):
-    user_key=models.CharField(max_length=250)
-    stacked_data=models.IntegerField()
+    user_key=models.CharField(max_length=50)
+    stacked_data=models.IntegerField(default=0)
+    recent_station=models.CharField(max_length=500,default="")
+    exist_user=models.BooleanField(default=1)
     
     def __str__(self):
         return self.user_key
@@ -27,7 +30,7 @@ class User(models.Model):
 class Data(models.Model):
     schedule=models.ForeignKey(Schedule)
     user=models.ForeignKey(User)
-    time=models.DateTimeField()
+    time=models.DateTimeField(auto_now_add=True)
     
     SIT_IN_DATA_CHOICES = (
         (1, '입석'),
